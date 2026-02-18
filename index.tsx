@@ -61,7 +61,7 @@ const App: React.FC = () => {
         
         // Include a list of recently used words to avoid repeats
         const blacklist = Array.from(usedWords).slice(-15).join(', ');
-        const prompt = `Provide one random Bollywood ${category} name that has at least ${minWords} words in it. 
+        const prompt = `Provide one random Hollywood ${category} name that has at least ${minWords} words in it. 
         IMPORTANT: Do not provide any of the following names: [${blacklist}].
         Respond with ONLY the name. Do not include quotes or extra text.`;
         
@@ -111,8 +111,8 @@ const App: React.FC = () => {
       </div>
 
       <header className="text-center mb-12 z-10 animate-fade">
-        <h1 className="bollywood-font mb-2">
-          <span className="text-5xl md:text-7xl uppercase gradient-text leading-tight drop-shadow-[0_10px_10px_rgba(0,0,0,0.5)]">Bollywood</span><br/>
+        <h1 className="hollywood-font mb-2">
+          <span className="text-5xl md:text-7xl uppercase gradient-text leading-tight drop-shadow-[0_10px_10px_rgba(0,0,0,0.5)]">Hollywood</span><br/>
           <span className="text-lg md:text-2xl uppercase tracking-[0.4em] text-amber-500/80 font-bold">Data Engine</span>
         </h1>
         <div className="flex items-center justify-center gap-4 mt-2">
@@ -200,7 +200,7 @@ const App: React.FC = () => {
               ) : (
                 <div className="space-y-5">
                   <p className="text-[10px] uppercase tracking-[0.8em] text-amber-500/50 font-black">UNIQUE TRANSMISSION</p>
-                  <h2 className="text-4xl md:text-6xl font-bold bollywood-font text-white leading-tight drop-shadow-[0_0_15px_rgba(255,255,255,0.2)]">{result}</h2>
+                  <h2 className="text-4xl md:text-6xl font-bold hollywood-font text-white leading-tight drop-shadow-[0_0_15px_rgba(255,255,255,0.2)]">{result}</h2>
                 </div>
               )}
             </div>
@@ -268,7 +268,7 @@ const App: React.FC = () => {
       </main>
 
       <footer className="mt-auto py-12 text-slate-700 text-[10px] tracking-[0.6em] uppercase opacity-30 font-black z-10">
-        &copy; Bollywood Data Engine Protocol MMXXIV
+        &copy; Hollywood Data Engine Protocol MMXXIV
       </footer>
     </div>
   );
