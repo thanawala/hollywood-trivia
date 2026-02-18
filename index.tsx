@@ -4,11 +4,356 @@ import ReactDOM from 'react-dom/client';
 
 // --- Configuration & Data ---
 const INITIAL_DATA: Record<string, string> = {
-  'Movies': `Sholay\nDilwale Dulhania Le Jayenge\nLagaan\nMother India\nMughal-e-Azam\nPakeezah\nAnand\nZanjeer\nDeewaar\nAmar Akbar Anthony\nDon\nQayamat Se Qayamat Tak\nMaine Pyar Kiya\nHum Aapke Hain Koun\nDil To Pagal Hai\nKuch Kuch Hota Hai\nKaho Naa Pyaar Hai\nLage Raho Munna Bhai\nRang De Basanti\nChak De India\nJab We Met\nTaare Zameen Par\nGhajini\n3 Idiots\nMy Name Is Khan\nDabangg\nZindagi Na Milegi Dobara\nBarfi\nYeh Jawaani Hai Deewani\nChennai Express\nQueen\nHaider\nBajrangi Bhaijaan\nDangal\nGully Boy\nAndhadhun\nArticle 15\nDrishyam\nTumbbad\nBaahubali\nPushpa\nKGF\nPathaan\nJawan\nAnimal\nRocky Aur Rani Kii Prem Kahaani\nBrahmastra\nGangubai Kathiawadi\nSardar Udham\nMimi\nDil Chahta Hai\nSwades\nKal Ho Naa Ho\nDevdas\nBlack\nOm Shanti Om\nRockstar\nVicky Donor\nPiku\nNeerja\nUdta Punjab\nPink\nRaazi\nBadhaai Ho\nSuper 30\nChhichhore\nThappad\nThe Kashmir Files\nVikram Vedha\nBhool Bhulaiyaa\nDrishyam 2\nKantara\nSita Ramam\nPonniyin Selvan\nMajor\nRocketry The Nambi Effect\n777 Charlie\nKarthikeya 2\nBimbisara\nVikrant Rona\nLove Today\nVarisu\nThunivu\nDasara\nVirupaksha\n2018\nCarry on Jatta 3\nRDX\nKannur Squad\nLeo\nJigarthanda Double X\nHi Nanna\nKaathal The Core\nSalaar\nDunki\n12th Fail`,
-  'Actors': `Amitabh Bachchan\nShah Rukh Khan\nSalman Khan\nAamir Khan\nAkshay Kumar\nAjay Devgn\nHrithik Roshan\nRanbir Kapoor\nRanveer Singh\nAyushmann Khurrana\nVicky Kaushal\nRajkummar Rao\nPankaj Tripathi\nNawazuddin Siddiqui\nDilip Kumar\nRaj Kapoor\nDev Anand\nRajesh Khanna\nDharmendra\nSanjeev Kumar\nMithun Chakraborty\nGovinda\nSanjay Dutt\nAnil Kapoor\nSunny Deol\nJackie Shroff\nSaif Ali Khan\nShahid Kapoor\nVarun Dhawan\nSiddharth Malhotra\nKartik Aaryan\nTiger Shroff\nJohn Abraham\nEmraan Hashmi\nAbhishek Bachchan\nFarhan Akhtar\nArjun Kapoor\nAditya Roy Kapur\nRajinikanth\nKamal Haasan\nPrabhas\nAllu Arjun\nYash\nRam Charan\nJr NTR\nDulquer Salmaan\nFahadh Faasil\nVijay Sethupathi\nSuriya\nDhanush\nDeepika Padukone\nPriyanka Chopra\nAlia Bhatt\nKareena Kapoor\nKatrina Kaif\nAnushka Sharma\nVidya Balan\nKangana Ranaut\nShraddha Kapoor\nKriti Sanon\nKiara Advani\nTaapsee Pannu\nBhumi Pednekar\nSanya Malhotra\nRadhika Apte\nYami Gautam\nSara Ali Khan\nJanhvi Kapoor\nAnanya Panday\nRashmika Mandanna\nNayanthara\nSamantha Ruth Prabhu\nMadhuri Dixit\nSridevi\nRekha\nHema Malini\nJaya Bachchan\nShabana Azmi\nSmita Patil\nKajol\nRani Mukerji\nPreity Zinta\nAishwarya Rai\nTabu\nKarisma Kapoor\nJuhi Chawla\nManisha Koirala\nUrmila Matondkar\nRaveena Tandon\nShilpa Shetty\nSushmita Sen\nLara Dutta\nBipasha Basu\nParineeti Chopra\nIleana D'Cruz\nJacqueline Fernandez\nNora Fatehi\nTamannaah Bhatia\nAditi Rao Hydari\nSobhita Dhulipala`,
-  'Songs': `Chaiyya Chaiyya\nDil Se Re\nTum Hi Ho\nKesariya\nZaalima\nGali Mein Aaj Chand Nikla\nPehla Nasha\nTujhe Dekha To\nChappa Chappa\nDola Re Dola\nKal Ho Naa Ho\nMitwa\nMaula Mere Maula\nKun Faya Kun\nPhir Se Ud Chala\nAgar Tum Saath Ho\nChanna Mereya\nBekhayali\nRaataan Lambiyan\nPasoori\nNatu Natu\nSrivalli\nManike\nBesharam Rang\nTere Vaaste\nPhir Aur Kya Chahiye\nLutt Putt Gaya\nSatranga\nArjan Vailly\nPehle Bhi Main\nHua Main\nKashmir Main Tu Kanyakumari\nLungi Dance\nGerua\nZingaat\nMalhari\nDeewani Mastani\nGhoomar\nKhalibali\nParam Sundari\nTum Kya Mile\nWhat Jhumka\nVe Kamleya\nDil Jhoom\nO Maahi\nVidaamuyarchi\nFear Song\nTauba Tauba\nSoni Soni\nAaj Ke Baad\nNaseeb Se\nSun Sajni\nLe Aaunga\nTere Pyaar Mein\nPyaar Hota Kayi Baar Hai\nShow Me The Thumka\nCharacter Dheela 2.0\nMunda Sona Hoon Main\nChedkhaniyan\nApna Bana Le\nThumkeshwari\nRasiya\nDance Ka Bhoot\nDeva Deva\nKaise Hua\nTujhe Kitna Chahne Lage\nGhungroo\nJai Jai Shivshankar\nShaitan Ka Saala\nO Saki Saki\nDilbar\nBom Diggy Diggy\nDil Chori\nChote Chote Peg\nBom Diggy\nHigh Rated Gabru\nBan Ja Rani\nHawa Hawa\nMere Rashke Qamar\nNashe Si Chadh Gayi\nThe Humma Song\nEnna Sona\nZaalima\nLaila Main Laila\nThe Breakup Song\nAe Dil Hai Mushkil\nBulleya\nBaby Ko Bass Pasand Hai\nJag Ghoomeya\nKar Gayi Chull\nBolna\nSoch Na Sake\nSanam Re\nJanam Janam\nMatargashti\nHeer Toh Badi Sad Hai`,
-  'Music Directors': `A.R. Rahman\nPritam\nAmit Trivedi\nVishal-Shekhar\nShankar-Ehsaan-Loy\nMithoon\nAnirudh Ravichander\nSanthosh Narayanan\nThaman S\nDevi Sri Prasad\nM.M. Keeravani\nSneha Khanwalkar\nRam Sampath\nSachin-Jigar\nAjay-Atul\nSajid-Wajid\nHimesh Reshammiya\nAnu Malik\nJatin-Lalit\nNadeem-Shravan\nLaxmikant-Pyarelal\nR.D. Burman\nS.D. Burman\nKalyanji-Anandji\nNaushad\nO.P. Nayyar\nMadan Mohan\nShankar-Jaikishan\nSalil Chowdhury\nKhayyam\nIlaiyaraaja\nHarris Jayaraj\nYuvan Shankar Raja\nG.V. Prakash Kumar\nD. Imman\nGhibran\nSam C.S.\nSushin Shyam\nJakes Bejoy\nVishnu Vijay\nBijibal\nShaan Rahman\nM. Jayachandran\nRavi Basrur\nAjaneesh Loknath\nCharan Raj\nArjun Janya\nMani Sharma`,
-  'Directors': `Yash Chopra\nKaran Johar\nSanjay Leela Bhansali\nRajkumar Hirani\nAditya Chopra\nSS Rajamouli\nZoya Akhtar\nFarhan Akhtar\nAnurag Kashyap\nVishal Bhardwaj\nImtiaz Ali\nRohit Shetty\nKabir Khan\nShoojit Sircar\nNitesh Tiwari\nAyan Mukerji\nSriram Raghavan\nAnubhav Sinha\nVikramaditya Motwane\nNeeraj Pandey\nHansal Mehta\nMeghna Gulzar\nAshutosh Gowariker\nRakeysh Omprakash Mehra\nMani Ratnam\nGautham Vasudev Menon\nPa. Ranjith\nLokesh Kanagaraj\nAtlee\nPrashanth Neel\nSandeep Reddy Vanga\nNag Ashwin\nSukumar\nTrivikram Srinivas\nKoratala Siva\nNelson Dilipkumar\nKarthik Subbaraj\nVetrimaaran\nMari Selvaraj\nJeethu Joseph\nLijo Jose Pellissery\nAnjali Menon\nBasil Joseph\nDileesh Pothan\nMahesh Narayanan\nAmal Neerad\nAnwar Rasheed\nAashiq Abu\nRaj B Shetty\nRishab Shetty`
+  'Movies': `Jaws
+Casablanca
+Psycho
+Vertigo
+Amadeus
+Gladiator
+Inception
+Moonlight
+Parasite
+Unforgiven
+Toy Story
+Pulp Fiction
+Citizen Kane
+Die Hard
+The Godfather
+The Matrix
+The Apartment
+The Shining
+The Exorcist
+The Revenant
+Jurassic Park
+Reservoir Dogs
+Schindler's List
+Forrest Gump
+Lawrence of Arabia
+Raging Bull
+Singin' in the Rain
+Apocalypse Now
+Blade Runner
+Sunset Boulevard
+Good Will Hunting
+The Social Network
+The Deer Hunter
+The Green Mile
+The Sixth Sense
+The Great Escape
+The Iron Giant
+The Breakfast Club
+The Usual Suspects
+The Silence of the Lambs
+Gone with the Wind
+Back to the Future
+Raiders of the Lost Ark
+Saving Private Ryan
+No Country for Old Men
+Eternal Sunshine of the Spotless Mind
+Butch Cassidy and the Sundance Kid
+To Kill a Mockingbird
+Star Wars: A New Hope
+12 Angry Men
+Dr. Strangelove
+Double Indemnity
+Rear Window
+North by Northwest
+All About Eve
+Some Like It Hot
+Bridge on the River Kwai
+On the Waterfront
+It Happened One Night
+One Flew Over the Cuckoo's Nest
+Full Metal Jacket
+A Clockwork Orange
+Requiem for a Dream
+Taxi Driver
+Braveheart
+Million Dollar Baby
+American Beauty
+Mad Max: Fury Road
+Everything Everywhere All at Once
+There Will Be Blood
+Portrait of a Lady on Fire
+The Lord of the Rings: The Fellowship of the Ring
+Pirates of the Caribbean: The Curse of the Black Pearl
+Dr. Strangelove or: How I Learned to Stop Worrying and Love the Bomb
+Birdman or (The Unexpected Virtue of Ignorance)
+Borat: Cultural Learnings of America for Make Benefit Glorious Nation of Kazakhstan
+The Assassination of Jesse James by the Coward Robert Ford
+Terminator 2: Judgment Day
+Monty Python and the Holy Grail
+Close Encounters of the Third Kind
+2001: A Space Odyssey
+Once Upon a Time in the West
+Once Upon a Time in Hollywood
+Guardians of the Galaxy
+Ferris Bueller's Day Off
+Pan's Labyrinth
+The Grand Budapest Hotel
+The Shawshank Redemption
+Top Gun: Maverick
+Spider-Man: Into the Spider-Verse
+Little Miss Sunshine
+How to Train Your Dragon
+Harry Potter and the Sorcerer's Stone
+Three Billboards Outside Ebbing, Missouri
+Planes, Trains and Automobiles
+Who Framed Roger Rabbit
+The Curious Case of Benjamin Button
+Percy Jackson & the Olympians: The Lightning Thief
+Everything Everywhere All at Once
+The Banshees of Inisherin`,
+  'Actors': `Cher
+Zendaya
+Prince
+Madonna
+Iman
+Tom Hanks
+Brad Pitt
+Meryl Streep
+Al Pacino
+Robert De Niro
+Viola Davis
+Denzel Washington
+Tom Cruise
+Julia Roberts
+Leonardo DiCaprio
+Cate Blanchett
+Morgan Freeman
+Sandra Bullock
+George Clooney
+Nicole Kidman
+Marlon Brando
+Audrey Hepburn
+Cary Grant
+James Dean
+Bette Davis
+Humphrey Bogart
+Ingrid Bergman
+Gregory Peck
+Elizabeth Taylor
+Paul Newman
+Harrison Ford
+Natalie Portman
+Christian Bale
+Joaquin Phoenix
+Amy Adams
+Mahershala Ali
+Frances McDormand
+Gary Oldman
+Olivia Colman
+Daniel Day-Lewis
+Philip Seymour Hoffman
+Anthony Hopkins
+Emma Thompson
+Helen Mirren
+Ralph Fiennes
+Julianne Moore
+Willem Dafoe
+Tilda Swinton
+Javier Bardem
+Penelope Cruz
+Jean-Claude Van Damme
+Robert Downey Jr.
+Samuel L. Jackson
+Scarlett Johansson
+Jennifer Lawrence
+Matthew McConaughey
+Octavia Spencer
+Benedict Cumberbatch
+Saoirse Ronan
+Timothée Chalamet
+Florence Pugh
+Anya Taylor-Joy
+Margot Robbie
+Ryan Gosling
+Emily Blunt
+Cillian Murphy
+Forest Whitaker
+Kathy Bates
+Christopher Walken
+Diane Keaton
+Michael Caine
+Maggie Smith
+Ian McKellen
+Judi Dench
+Patrick Stewart
+Helena Bonham Carter
+Sacha Baron Cohen
+Peter Dinklage
+Lupita Nyong'o
+Ke Huy Quan
+Edward Norton
+Jamie Foxx
+Reese Witherspoon
+Charlize Theron
+Benicio del Toro
+Catherine Zeta-Jones
+Renee Zellweger
+Colin Farrell
+Barry Keoghan
+Jessica Chastain
+Brendan Fraser
+Michelle Yeoh
+Angela Bassett
+Allison Janney
+J.K. Simmons
+Christoph Waltz
+Tommy Lee Jones
+Anjelica Huston
+Billy Bob Thornton
+Mary-Kate and Ashley Olsen`,
+  'Songs': `Smile
+Yesterday
+Respect
+Skyfall
+Shallow
+Stayin' Alive
+Moon River
+Eye of the Tiger
+Footloose
+Ghostbusters
+My Heart Will Go On
+Over the Rainbow
+Singing in the Rain
+Tiny Dancer
+Purple Rain
+Lose Yourself
+Let It Go
+Happy
+Danger Zone
+What a Feeling
+Fame
+Grease
+Mrs. Robinson
+Knockin' on Heaven's Door
+Unchained Melody
+As Time Goes By
+The Way We Were
+Wind Beneath My Wings
+I Will Always Love You
+Can't Help Falling in Love
+Somewhere Out There
+Circle of Life
+Beauty and the Beast
+A Whole New World
+You're the One That I Want
+Don't You (Forget About Me)
+Power of Love
+Man in the Mirror
+Diamonds Are a Girl's Best Friend
+New York, New York
+Life is a Highway
+Pure Imagination
+Under the Sea
+Hakuna Matata
+Can You Feel the Love Tonight
+Raindrops Keep Fallin' on My Head
+Against All Odds (Take a Look at Me Now)
+(I've Had) The Time of My Life
+I Don't Want to Miss a Thing
+Streets of Philadelphia`,
+  'Music Directors': `Vangelis
+Kitaro
+Yanni
+Enya
+John Williams
+Hans Zimmer
+Ennio Morricone
+Danny Elfman
+James Horner
+Alan Silvestri
+Howard Shore
+Jerry Goldsmith
+Bernard Herrmann
+Max Steiner
+Dimitri Tiomkin
+Elmer Bernstein
+Maurice Jarre
+Nino Rota
+Henry Mancini
+Lalo Schifrin
+Randy Newman
+Thomas Newman
+Michael Giacchino
+Alexandre Desplat
+Ludwig Göransson
+Hildur Guðnadóttir
+Justin Hurwitz
+Trent Reznor
+Atticus Ross
+Nicholas Britell
+Jóhann Jóhannsson
+Carter Burwell
+Marco Beltrami
+Clint Mansell
+Philip Glass
+Bear McCreary
+Daniel Pemberton
+Terence Blanchard
+Kris Bowers
+Emile Mosseri
+Mychael Danna
+Rachel Portman
+Anne Dudley
+Gabriel Yared
+Tan Dun
+Gustavo Santaolalla
+A.R. Rahman
+Joe Hisaishi
+Ryuichi Sakamoto
+Alberto Iglesias`,
+  'Directors': `Hitchcock
+Spielberg
+Scorsese
+Nolan
+Tarantino
+Kubrick
+Coppola
+Fellini
+Kurosawa
+Fincher
+James Cameron
+Ridley Scott
+Greta Gerwig
+Sofia Coppola
+Ava DuVernay
+Chloe Zhao
+Kathryn Bigelow
+Patty Jenkins
+Denis Villeneuve
+Bong Joon-ho
+Guillermo del Toro
+Alfonso Cuarón
+Alejandro G. Iñárritu
+Wes Anderson
+Paul Thomas Anderson
+David Lynch
+Spike Lee
+Jordan Peele
+Ari Aster
+Robert Eggers
+Orson Welles
+Billy Wilder
+John Huston
+Frank Capra
+Howard Hawks
+John Ford
+George Lucas
+Peter Jackson
+Ang Lee
+Woody Allen
+Clint Eastwood
+Ron Howard
+Sam Mendes
+Danny Boyle
+Damien Chazelle
+Martin McDonagh
+Todd Field
+Yorgos Lanthimos
+M. Night Shyamalan
+Jean-Luc Godard`
 };
 
 const App: React.FC = () => {
